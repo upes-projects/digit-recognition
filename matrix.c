@@ -21,6 +21,12 @@ struct matrix* newMatrix(long rows, long cols){
 
 
 void putMatrixElement(struct matrix* mat, long i, long j, double val){
+	if(mat == NULL){
+		printf("address is NULL");
+		return;
+	}
+
+
 	  if(i >= mat->rows || j >= mat->cols){
      	         fputs("matrix out of index", stdout);
      	         return;
@@ -33,6 +39,11 @@ void putMatrixElement(struct matrix* mat, long i, long j, double val){
 
 
 double getMatrixElement(struct matrix* mat, long i, long j){
+	if(mat == NULL){
+                printf("address is NULL");
+                return 0;
+        }
+
 	if(i >= mat->rows || j >= mat->cols){
 		fputs("matrix out of index", stdout);
 		return 0;
@@ -42,14 +53,29 @@ double getMatrixElement(struct matrix* mat, long i, long j){
 }
 
 long countMatrixRows(struct matrix * mat){
+	if(mat == NULL){
+                printf("address is NULL");
+                return 0;
+        }
+
 	return mat->rows;
 }
 
 long countMatrixCols(struct matrix * mat){
+        if(mat == NULL){
+                printf("address is NULL");
+                return 0;
+        }
+
 	return mat->cols;
 }
 
 struct matrix* multiplyMatrixElementWise(struct matrix * mat1, struct matrix * mat2){
+        if(mat1 == NULL || mat2 == NULL){
+                printf("address is NULL");
+                return NULL;
+        }
+
 
         if(!(mat1->rows == mat2->rows && mat1->cols == mat2->cols)){
                 fputs("cannot  multiply matrix element wise", stdout);
@@ -74,6 +100,10 @@ struct matrix* multiplyMatrixElementWise(struct matrix * mat1, struct matrix * m
 
 
 struct matrix* multiplyMatrixDot(struct matrix * mat1, struct matrix * mat2){
+        if(mat1 == NULL || mat2 == NULL){
+                printf("address is NULL");
+                return NULL;
+        }
 
 	if(mat1->cols != mat2->rows){
 		fputs("cannot multiply matrix", stdout);
@@ -106,7 +136,10 @@ struct matrix* multiplyMatrixDot(struct matrix * mat1, struct matrix * mat2){
 
 
 void  multiplyMatrixScaler(struct matrix * mat1, double a){
-
+        if(mat == NULL){
+                printf("address is NULL");
+                return;
+        }
 
 
         long i, j, k;
@@ -120,6 +153,10 @@ void  multiplyMatrixScaler(struct matrix * mat1, double a){
 }
 
 struct matrix* addMatrix(struct matrix * mat1, struct matrix * mat2){
+        if(mat1 == NULL || mat2 == NULL){
+                printf("address is NULL");
+                return NULL;
+        }
 
         if(!(mat1->rows == mat2->rows && mat1->cols == mat2->cols)){
                 fputs("cannot add matrix", stdout);
@@ -146,7 +183,10 @@ struct matrix* addMatrix(struct matrix * mat1, struct matrix * mat2){
 
 void addMatrixScaler(struct matrix * mat1, double a){
 
-
+        if(mat1 == NULL){
+                printf("address is NULL");
+                return;
+        }
 
         long i, j, k;
         long rows = mat1->rows,  cols = mat1->cols;
@@ -165,6 +205,10 @@ void addMatrixScaler(struct matrix * mat1, double a){
 
 
 struct matrix* subMatrix(struct matrix * mat1, struct matrix * mat2){
+        if(mat1 == NULL || mat2 == NULL){
+                printf("address is NULL");
+                return NULL;
+        }
 
         if(!(mat1->rows == mat2->rows && mat1->cols == mat2->cols)){
                 fputs("cannot subtract matrix", stdout);
@@ -190,7 +234,10 @@ struct matrix* subMatrix(struct matrix * mat1, struct matrix * mat2){
 
 void subMatrixScaler(struct matrix * mat1, double a){
 
-
+        if(mat1 == NULL){
+                printf("address is NULL");
+                return;
+        }
 
         long i, j, k;
         long rows = mat1->rows,  cols = mat1->cols;
@@ -205,6 +252,11 @@ void subMatrixScaler(struct matrix * mat1, double a){
 
 
 void printMatrix(struct matrix * mat){
+        if(mat == NULL){
+                printf("address is NULL");
+                return;
+        }
+
 	long rows = mat->rows;
 	long cols = mat->cols;
 
@@ -220,7 +272,13 @@ void printMatrix(struct matrix * mat){
 
 
 void initializeMatrix(struct matrix * mat, double val){
-        long rows = mat->rows;
+        if(mat == NULL){
+                printf("address is NULL");
+                return;
+        }
+
+        
+	long rows = mat->rows;
         long cols = mat->cols;
 
         long i, j, k;
@@ -233,7 +291,12 @@ void initializeMatrix(struct matrix * mat, double val){
 }
 
 void deleteMatrix(struct matrix* mat){
-        free(mat->data);
-        free(mat);
-}       
+        if(mat == NULL){
+                printf("address is NULL");
+                return;
+        }
 
+
+	free(mat->data);
+	free(mat);
+}
