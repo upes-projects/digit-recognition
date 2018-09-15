@@ -1,5 +1,5 @@
 
-matrix is a structure having three data type ->
+matrix is a structure having three data type 
 1) long rows => store rows of matrix;
 2) long cols => store cols of matrix;
 3) double *data => pointer pointing to array of type double and size rows * cols
@@ -22,22 +22,35 @@ long countMatrixCols(struct matrix * mat);
 => return total no. of columns of matrix 'mat'
 
 struct matrix* multiplyMatrixElementWise(struct matrix * mat1, struct matrix * mat2);
-=> 
+=> element wise multiplication of two matrix
+=> return address of new matrix
 
 struct matrix* multiplyMatrixDot(struct matrix * mat1, struct matrix * mat2);
+=> matrix product of two matrix
+=> return address of new matrix
 
 void  multiplyMatrixScaler(struct matrix * mat1, double a);
+=> multiply element of matrix by scaler a
 
 struct matrix* addMatrix(struct matrix * mat1, struct matrix * mat2);
+=> addition of two matrix
+=> return address of new matrix
 
 void addMatrixScaler(struct matrix * mat1, double a);
+=> add 'a' to elements of matrix
 
 struct matrix* subMatrix(struct matrix * mat1, struct matrix * mat2);
+=> subtract two matrix;
+=> return address of new matrix
 
 void subMatrixScaler(struct matrix * mat1, double a);
+=> subtract a from elements of matrix
 
 void printMatrix(struct matrix * mat);
+=> print matrix on screen
 
 void initializeMatrix(struct matrix * mat, double val);
+=> initialize all member of matrix to value 'val'
 
 void deleteMatrix(struct matrix* mat);
+=> delete matrix from heap
