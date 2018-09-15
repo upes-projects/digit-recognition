@@ -1,3 +1,4 @@
+//this file is property of Red-Fleet
 #include"matrix.c"
 
 struct stack_node{
