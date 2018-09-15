@@ -1,4 +1,4 @@
-
+//this file is property of Red-Fleet
 matrix is a structure having three data type 
 1) long rows => store rows of matrix;
 2) long cols => store cols of matrix;
