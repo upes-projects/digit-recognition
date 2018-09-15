@@ -1,14 +1,28 @@
+
+matrix is a structure having three data type ->
+1) long rows => store rows of matrix;
+2) long cols => store cols of matrix;
+3) double *data => pointer pointing to array of type double and size rows * cols
+
 struct matrix* newMatrix(long rows, long cols);
+=> function to create new matix
+=> input are rows and columns
+=> output is address of matrix
 
 void putMatrixElement(struct matrix* mat, long i, long j, double val);
+=> update element of matrix 'mat' at row 'i' and column 'j' to value 'val'
 
 double getMatrixElement(struct matrix* mat, long i, long j);
+=> return value of element of matrix 'mat' at row 'i' and colums 'j'
 
 long countMatrixRows(struct matrix * mat);
+=> return total no. of rows of matrix 'mat'
 
 long countMatrixCols(struct matrix * mat);
+=> return total no. of columns of matrix 'mat'
 
 struct matrix* multiplyMatrixElementWise(struct matrix * mat1, struct matrix * mat2);
+=> 
 
 struct matrix* multiplyMatrixDot(struct matrix * mat1, struct matrix * mat2);
 
@@ -25,3 +39,5 @@ void subMatrixScaler(struct matrix * mat1, double a);
 void printMatrix(struct matrix * mat);
 
 void initializeMatrix(struct matrix * mat, double val);
+
+void deleteMatrix(struct matrix* mat);
