@@ -232,3 +232,8 @@ void initializeMatrix(struct matrix * mat, double val){
         }
 }
 
+void deleteMatrix(struct matrix* mat){
+        free(mat->data);
+        free(mat);
+}       
+
