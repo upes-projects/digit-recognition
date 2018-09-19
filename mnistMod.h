@@ -1,3 +1,5 @@
+//this file is property of Red-Fleet
+// only for neural net training
 #include <stdio.h>
 #include <stdlib.h>
 #include<string.h>
